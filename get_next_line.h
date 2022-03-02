@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 15:03:48 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/02 11:19:14 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/02 21:45:03 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,31 @@
 #  define BUFFER_SIZE 42
 # endif
 # include <stddef.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+int	incr(int inc);
+
+static void	*xmalloc(unsigned int size)
+{
+	void		*ptr;
+
+	if (incr(-1) == 0)
+		ptr = 0;
+	else
+		ptr = malloc(size);
+	fprintf(stderr, "malloc:%p\n", ptr);
+	return (ptr);
+}
+
+static void	xfree(void *ptr)
+{
+	fprintf(stderr, "free  :%p\n", ptr);
+	free(ptr);
+}
+
+#define malloc(x) xmalloc(x)
+#define free(x) xfree(x)
 
 char	*get_next_line(int fd);
 
