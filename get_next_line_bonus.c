@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:01:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/03 12:41:16 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/03 13:37:29 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	*get_next_line(int fd)
 	ssize_t			char_read;
 	size_t			i;
 
-	if (gnl_root()->str == 0)
+	if (gnl_root()->str == 0 && BUFFER_SIZE > 0)
 		gnl_root()->str = malloc(BUFFER_SIZE + 1);
 	buf = gnl_root()->str;
 	node = process_buffered(fd, &i);
