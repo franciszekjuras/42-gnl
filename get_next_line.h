@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 15:03:48 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/02 21:45:03 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/03 11:32:02 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # endif
 # include <stddef.h>
 
+/*
 #include <stdio.h>
 #include <stdlib.h>
 int	incr(int inc);
@@ -41,8 +42,10 @@ static void	xfree(void *ptr)
 
 #define malloc(x) xmalloc(x)
 #define free(x) xfree(x)
+*/
 
 char	*get_next_line(int fd);
+void	*gnl_close(int fd);
 
 typedef struct s_list	t_list;
 
