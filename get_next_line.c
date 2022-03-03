@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:01:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/03 11:53:26 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/03 12:39:48 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,15 @@ static char	*parse_line(t_list *node, size_t i)
 char	*get_next_line(int fd)
 {
 	t_list			*node;
-	char			buf[BUFFER_SIZE + 1];
+	char			*buf;
 	ssize_t			char_read;
 	size_t			i;
 
+	if (gnl_root()->str == 0)
+		gnl_root()->str = malloc(BUFFER_SIZE + 1);
+	buf = gnl_root()->str;
 	node = process_buffered(fd, &i);
-	if (node == 0)
+	if (node == 0 || buf == 0)
 		return (0);
 	char_read = -1;
 	while ((node->str == 0 || node->str[i] != '\n') && char_read != 0)
