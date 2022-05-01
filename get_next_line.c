@@ -6,13 +6,12 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:01:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/03 12:59:04 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/01 23:01:02 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 #include "get_next_line.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t len);
