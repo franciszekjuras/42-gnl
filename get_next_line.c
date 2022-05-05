@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:01:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/01 23:01:02 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/05 19:19:31 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ void	*gnl_close(int fd)
 	prev->next = next->next;
 	free(next->str);
 	free(next);
+	if (root->next == 0)
+	{
+		free(root->str);
+		root->str = 0;
+	}
 	return (0);
 }
 
